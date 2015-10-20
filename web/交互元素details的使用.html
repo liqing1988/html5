@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>交互元素details的使用</title>
+<style type="text/css">
+body{
+	font-size:12px;
+}
+span{
+	font-weight:bold;
+}
+details{
+	overflow:hidden;
+	height:0;
+	padding-left:200px;
+	position:relative;
+	display:block;
+}
+details[open]{
+	height:auto;
+}
+
+summary{
+	font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+	<span onClick="span_click();">隐藏脚注</span>
+	<details id="details1">
+		本页面生成于2015-10-18
+	</details>
+	
+	<br><br>
+	<span>显示脚注</span>
+	<details open="open">
+		本页面生成于2015-10-19
+		<summary>页面说明</summary>
+	</details>
+</body>
+
+<script type="text/javascript" src="./static/js/jquery-1.9.min.js"></script>
+<script type="text/javascript">
+	function span_click(){
+		
+		var openFlag = $("#details1").attr("open");
+		if(openFlag != 'open'){
+			$("#details1").attr("open", "open");
+		}else{
+			$("#details1").removeAttr("open");
+		}
+	}
+</script>
+</html>
